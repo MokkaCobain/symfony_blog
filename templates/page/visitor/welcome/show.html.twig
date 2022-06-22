@@ -1,0 +1,69 @@
+{% extends "theme/base_front.html.twig" %}
+
+{% block title %}Tous les articles{% endblock %}
+
+{% block intro_section %}
+
+    <section class="intro-section d-flex justify-content-center align items-center p-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 intro-section-text">
+                        <h1 class="display-2 text-center">
+                            <span class="display-2--intro"></span>
+                            <span class="display-2--intro">de Jean Dupont</span>
+                        </h1>
+                </div>
+                <div class="col-md-5 intro-section-image mt-3">
+                    <div class="text-center">
+                        <img src="{{ asset('image/static/intro.svg') }}" alt="icone de bloc-notes" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block main %}
+{% for post in posts %}
+<article class="post">
+    <header>
+        <div class="title">
+            <h2><a href="">{{ post.title}}</a></h2>
+            <p>Publié le {{ post.updatedAt|date('d.m.Y')}}</p>
+        </div>
+        <div class="meta">
+            <p class="published">{{ post.category.name}}</time>
+            <a href="#" class="author">
+                <span class="name">{{ post.author.lastName}} {{ post.author.firstName}}</span>
+                {# <img src="" alt="" /> #}
+            </a>
+        </div>
+    </header>
+    <a href="#" class="image featured"><img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="{{ post.title }}" /></a>
+    <p>{{ post.content|raw}}</p>
+    <footer>
+        <ul class="actions">
+            <li><a href="single.html" class="button large">Lire</a></li>
+        </ul>
+        {# <ul class="stats">
+            <li><a href="#">General</a></li>
+            <li><a href="#" class="icon solid fa-heart">28</a></li>
+            <li><a href="#" class="icon solid fa-comment">128</a></li>
+        </ul> #}
+    </footer>
+</article>
+
+    {# <section class="d-flex flex-wrap mx-5">
+        
+        
+            <div class="card w-75 mb-3" class="border-end">
+                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" class="card-img-top img-responsive" alt="{{ post.title}}">
+                <div class="card-body">
+                <h2 class="card-title">{{ post.title}}</h2>
+                <small class="mb-3">Publié le {{ post.createdAt|date('d.m.Y')}}</small>
+                <p class="card-text mt-3">{{ post.content|raw}}</p>
+                </div>
+            </div> #}
+
+{% endfor %}
+  
+{% endblock %}

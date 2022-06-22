@@ -1,0 +1,40 @@
+{% extends "theme/base_admin.html.twig" %}
+
+{% block title %}Admin - Voir mon article n°{{post.id}}{% endblock %}
+
+{% block adminContent %}
+
+<section class="container mx-5">
+
+    <div class="mx-5 flex-column">
+        <div class="mt-3 mx-5">
+            <h1 class="display-5 mx-5 mb-3">
+                {{post.title}}
+            </h1>
+            <small class="mx-5">
+                Créé le : {{post.createdAt|date("d/m/Y")}} - dernière modification le {{post.updatedAt|date("m/d/Y à H:m")}}
+            </small>
+        </div>
+        <div class="mt-2 mx-5 h-50">
+            <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="{{post.title}}" class="img-fluid mx-5">
+        </div>
+        <div class="mx-5 mt-2 mb-1">
+            <p class="mx-5">Catégorie : {{post.category.name}}</p>
+            <p class="mx-5">Auteur : {{post.author.lastName}} {{post.author.firstName}}</p>
+        </div>
+        <hr>
+        <div class="mx-5">
+            <p class="mx-5 mb-5">{{post.content|raw}}</p>
+            <div class="mb-5 mt-5">
+
+                <a href="{{ path('admin.post.edit', {'id' : post.id}) }}" class="btn btn-lg btn-info p-3">Modifier</a>
+            </div>
+        </div>
+
+        
+    
+    </div>
+   
+
+</section>
+{% endblock %}

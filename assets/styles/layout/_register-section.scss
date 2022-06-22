@@ -1,0 +1,35 @@
+.register-section {
+    height: 90vh;
+    margin-top: 1rem;
+
+    .register-section-text 
+    {
+        width: 100%;
+        height: 15vh;
+        background-color: rgba(243, 243, 243, 0.616);
+        clip-path: polygon(0 0, 96% 0, 100% 48%, 0 100%);
+        font-size: 2rem;
+        margin : 0;
+        padding: 2rem;
+    }
+
+    .register-section-form
+    {
+        margin-top: 2rem;
+        height : 75vh;
+    }
+
+
+    @media  screen and (max-width: 570px) 
+    {
+        // .intro-section-image
+        // {
+        //     margin-top: 2rem;
+        // }
+             
+    }
+}
+
+
+
+

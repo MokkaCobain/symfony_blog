@@ -1,0 +1,138 @@
+{% extends "theme/base_front.html.twig" %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block main %}
+
+<section class="register-section">
+
+    <div class="container">
+    
+        <h1 class="register-section-text">Inscription</h1>
+
+        <div class="col">
+            <div class="register-section-form">
+
+                <form action="" method="post" class="ms-5">
+                    {{ form_start(registrationForm) }}
+            
+                    <div class="mb-3 d-flex">
+                        <div class="w-25">
+                            <label for="">Prénom</label>
+                        </div>
+                        <div class="w-25">
+                            {{ form_widget(registrationForm.firstName, {'attr' : {'class' : 'form-control'} } ) }}
+                            <div class="text-danger">
+                                {{ form_errors(registrationForm.firstName) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex">
+                        <div class="w-25">
+                            <label for="">Nom</label>
+                        </div>
+                        <div class="w-25">
+                            {{ form_widget(registrationForm.lastName, {'attr' : {'class' : 'form-control'} } ) }}
+
+                            <div class="text-danger">
+                                {{ form_errors(registrationForm.lastName) }}
+                            </div>
+                        </div> 
+                    </div>
+            
+                    <div class="mb-3 d-flex">
+                        <div class="w-25">
+                            <label for="">Email</label>
+                        </div>
+                        <div class="w-50">
+                            {{ form_widget(registrationForm.email, {'attr' : {'class' : 'form-control'} } ) }}
+
+                            <div class="text-danger">
+                                {{ form_errors(registrationForm.email) }}
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="mb-3">
+                        <div class="d-flex">
+                            <div class="w-25">
+                                <label for="">Mot de Passe</label>
+                            </div>
+                            <div class="w-50">
+                                {{ form_widget(registrationForm.password.first, {'attr' : {'class' : 'form-control'} } ) }}
+
+                                <div class="text-danger errors">
+                                    {{ form_errors(registrationForm.password.first) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="mb-5 d-flex">
+                        <div class="w-25">
+                            <label for="" class="me-1 p-auto">Confirmez votre mot de passe</label>
+                        </div>
+                        <div class="w-50">
+                            {{ form_widget(registrationForm.password.second, {'attr' : {'class' : 'form-control'} } ) }}
+
+                            <div class="text-danger">
+                                {{ form_errors(registrationForm.password.second) }}
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="mb-5 d-flex align-items-center">
+                            {{ form_widget(registrationForm.agreeTerms) }}
+                        <!-- Link trigger modal -->
+                        <label for="" class="ms-1">Lire et accepter <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">les conditions générales d'utilisation</a></label>
+                        <div class="text-danger ms-2">
+                            {{ form_errors(registrationForm.agreeTerms) }}
+                        </div>
+                    </div>
+            
+                    <div class="mb-3 d-flex">
+                        <button type="submit" class="btn btn-lg btn-info" formnovalidate>S'inscrire</button>
+                    </div>
+                
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Conditions générales d'utilisation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vero nostrum consequatur tempora molestias esse doloremque cum, rem deserunt, perspiciatis vitae amet ratione earum minima, repudiandae eum maiores animi repellendus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vero nostrum consequatur tempora molestias esse doloremque cum, rem deserunt, perspiciatis vitae amet ratione earum minima, repudiandae eum maiores animi repellendus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vero nostrum consequatur tempora molestias esse doloremque cum, rem deserunt, perspiciatis vitae amet ratione earum minima, repudiandae eum maiores animi repellendus.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    {{ form_end(registrationForm) }}
+                {# {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.password, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+            {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div> #}
+
+</section>
+    
+
+    
+{% endblock %}

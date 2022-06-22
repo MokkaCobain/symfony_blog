@@ -1,0 +1,43 @@
+{% extends "theme/base_admin.html.twig" %}
+
+{% block title %}Admin - Créer une catégorie{% endblock %}
+
+{% block adminContent %}
+
+<section class="d-flex justify-content-center align items-center mx-5">
+    <div class="container mx-5">
+        <div class="row mb-5 mx-5">
+            <div class="col-md-7">
+                    <h1 class="display-5 text-center">
+                        Modifier une catégorie
+                    </h1>
+            </div>
+        </div>
+        <div class="col mx-5">
+            <div class="register-section-form">
+
+
+                    {{ form_start(form) }}
+            
+                    <div class="mb-5 d-flex">
+                        <div class="w-20 mx-3">
+                            <label for="">Nom</label>
+                        </div>
+                        <div class="w-30">
+                            {{ form_widget(form.name, {'attr' : {'class' : 'form-control', 'autofocus' : true}}) }}
+                            <div class="text-danger mt-1">
+                                {{ form_errors(form.name) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 d-flex">
+                        <button type="submit" class="btn btn-lg btn-info" formnovalidate>Modifier</button>
+                    </div>
+                    {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

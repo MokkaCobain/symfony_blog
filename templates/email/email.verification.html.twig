@@ -1,0 +1,22 @@
+{% extends "theme/base_email.html.twig" %}
+
+{% block css %}
+
+{% endblock %}
+{% block main %}
+    <div class="fs-4">
+        <h3>Blog Jean Dupont - Verification de votre compte</h3>
+
+        <p>Bienvenue dans l'univers de Jean Dupont !</p>
+
+        <p>Pour vérifier et activer votre compte utilisateur, merci de cliquer sur le lien ci-dessous :</p>
+
+        <a href="{{ absolute_url(path('visitor.registration.email.verificated', {'id': user_id, 'token' : token_for_email_verification} )) }}">Vérifier mon compte</a>
+
+        <p>Vous avez jusqu'au <strong>{{ deadline_for_email_verification }}</strong> pour activer votre compte.</p>
+
+        <p>Merci pour votre inscription, à très vite sur mon blog.</p>
+
+        <p class="fst-italic">Jean</p>
+    </div>
+{% endblock %}

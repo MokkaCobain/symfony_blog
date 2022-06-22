@@ -1,0 +1,45 @@
+.intro-section 
+{
+    width: 100%;
+    // height: 50vh;
+    
+    background-color: rgba(243, 243, 243, 0.616);
+    // clip-path: polygon(0 0, 94% 0, 100% 32%, 0 54%);
+    
+
+
+    @media  screen and (max-width: 570px) 
+    {
+        .intro-section-image
+        {
+            margin-top: 2rem;
+        }
+             
+    }
+}
+
+
+
+    .intro-section-back {
+        width: 70%;
+        height: 20vh;
+        background-color: rgba(243, 243, 243, 0.616);
+        clip-path: polygon(0 0, 94% 0, 100% 32%, 0 54%);
+ 
+
+        @media  screen and (max-width: 570px) 
+        {
+            .intro-section-image
+            {
+                margin-top: 2rem;
+            }
+                
+        }
+
+
+    }
+
+
+
+
+
